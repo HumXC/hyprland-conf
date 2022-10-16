@@ -1,18 +1,18 @@
 * {
     border: none;
     border-radius: 14px;
-    font-family: "JetBrains Mono", "Font Awesome 5 Free";
+    font-family: "FiraCode", "MiSans";
     font-size: 15px;
     font-weight: bold;
     min-height: 0;
 }
 
 #waybar {
-	font-family: "JetBrains Mono", "Font Awesome 5 Free";
+    font-family: "FiraCode", "MiSans";
 }
 
 window#waybar {
-    background: rgba(30, 30, 46, 1.0);
+    background: rgba(255, 255, 255, 0);
     /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
     color: #e5e9f0;
     border-radius: 0;
@@ -26,12 +26,12 @@ window#waybar {
 
 #workspaces button.focused {
     background: #4d5362;
-    color: #ABE9B3;
+    color: #abe9b3;
 }
 
 #workspaces button.urgent {
     background-color: #bf616a;
-    color: #F28FAD;
+    color: #f28fad;
 }
 
 #mode {
@@ -39,19 +39,31 @@ window#waybar {
     border-bottom: 3px solid #ffffff;
 }
 
-#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor, #window {
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#window {
     padding: 2 15px;
     margin: 4px 2px;
-	background: #302D41;
+    background: #302d41;
 }
 
 #window {
-	background: #302D41;
-	color: #D9E0EE;
+    background: #302d41;
+    color: #d9e0ee;
 }
 
 #clock {
-    color: #89DCEB;
+    color: #89dceb;
 }
 
 #battery {
@@ -59,7 +71,7 @@ window#waybar {
 }
 
 #battery.charging {
-    color: #FAE3B0;
+    color: #fae3b0;
 }
 
 @keyframes blink {
@@ -70,7 +82,7 @@ window#waybar {
 }
 
 #battery.critical:not(.charging) {
-    color: #F28FAD;
+    color: #f28fad;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -79,35 +91,35 @@ window#waybar {
 }
 
 #cpu {
-    color: #ABE9B3;
+    color: #abe9b3;
 }
 
 #memory {
-    color: #B5E8E0;
+    color: #b5e8e0;
 }
 
 #backlight {
-    color: #DDB6F2;
+    color: #ddb6f2;
 }
 
 #network {
-    color: #96CDFB;
+    color: #96cdfb;
 }
 
 #network.disconnected {
-    color: #FAE3B0;
+    color: #fae3b0;
 }
 
 #pulseaudio {
-    color: #F2CDCD;
+    color: #f2cdcd;
 }
 
 #pulseaudio.muted {
-    color: #FAE3B0;
+    color: #fae3b0;
 }
 
 #custom-media {
-    color: #E8A2AF;
+    color: #e8a2af;
 }
 
 .custom-vlc {
