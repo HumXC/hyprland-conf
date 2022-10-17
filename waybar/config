@@ -29,7 +29,8 @@
     },
     "backlight": {
         "format": "　{percent}%",
-        "on-scroll-up": "echo"
+        "on-scroll-up": "$HOME/.config/waybar/set_light.sh up",
+        "on-scroll-down": "$HOME/.config/waybar/set_light.sh down"
     },
     "battery": {
         "states": {
