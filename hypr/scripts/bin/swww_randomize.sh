@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# origin: swww example script
 # This script will randomly go through the files of a directory, setting it
 # up as the wallpaper at regular intervals
 #
@@ -9,7 +9,7 @@ dir=$HOME/.config/hypr/wallpaper
 # Edit bellow to control the images transition
 export SWWW_TRANSITION_FPS=60
 export SWWW_TRANSITION_STEP=2
-sleep 1
+sleep 3
 # This controls (in seconds) when to switch to the next image
 INTERVAL=300
 
