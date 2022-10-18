@@ -10,23 +10,19 @@ dir=$HOME/.config/hypr/wallpaper
 # Edit bellow to control the images transition
 export SWWW_TRANSITION_FPS=60
 export SWWW_TRANSITION_STEP=2
-sleep 0.5
 # This controls (in seconds) when to switch to the next image
 INTERVAL=120
-setImg(){
-	swww img "$1"
-	if [ $? -ne 0 ];then
-		sleep 0.1
-		setImg "$1"
-	fi
-}
+
 while true; do
-	find "$dir" \
+	find "$dir"\
 		| while read -r img; do
-			echo "$((RANDOM % 1000)):$img"
+			if [ "$img" != "$dir" ];then
+				echo "$((RANDOM % 1000)):$img"
+			fi
 		done \
 		| sort -n | cut -d':' -f2- \
 		| while read -r img; do
+		echo "$img"
 			setImg "$img"
 			sleep $INTERVAL
 		done

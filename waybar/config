@@ -4,8 +4,10 @@
         "custom/launcher",
         "cpu",
         "memory",
-        "tray",
-        "hyprland/language"
+        "tray"
+    ],
+    "modules-center": [
+        "wlr/taskbar"
     ],
     "modules-right": [
         "custom/updates",
@@ -16,15 +18,13 @@
         "battery",
         "custom/power"
     ],
-    "hyprland/language": {
-        "format": "Lang: {}",
-        "format-us": "AMERICA, HELL YEAH!",
-        "format-tr": "As bayrakları",
-        "keyboard-name": "AT Translated Set 2 keyboard"
-    },
-    "hyprland/window": {
-        "format": "👉 {}",
-        "separate-outputs": true
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 24,
+        "icon-theme": "Tela_nord_dark",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close"
     },
     "pulseaudio": {
         "tooltip": false,
@@ -102,6 +102,6 @@
         "exec": "checkupdates | wc -l",
         "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
         "interval": 15,
-        "on-click": "alacritty -e paru -Syu && notify-send 'The system has been updated' "
+        "on-click": "kitty -e paru -Syu && notify-send 'The system has been updated' "
     }
 }
