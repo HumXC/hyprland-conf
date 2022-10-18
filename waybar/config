@@ -4,20 +4,30 @@
         "custom/launcher",
         "cpu",
         "memory",
-        "tray"
+        "tray",
+        "wlr/workspaces"
     ],
     "modules-center": [
         "wlr/taskbar"
     ],
     "modules-right": [
         "custom/updates",
-        "custom/wallpaper",
         "backlight",
         "pulseaudio",
+        "network",
         "clock",
         "battery",
         "custom/power"
     ],
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": ""
+        }
+    },
     "wlr/taskbar": {
         "format": "{icon}",
         "icon-size": 24,
@@ -58,10 +68,10 @@
             "warning": 30,
             "critical": 20
         },
-        "format": "{icon} {capacity}%",
+        "format": "{icon}  {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
+        "format-alt": "{time} {icon} ",
         "format-icons": [
             "",
             "",
