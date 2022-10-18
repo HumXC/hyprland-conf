@@ -1,45 +1,67 @@
 {
     "layer": "top",
-    "position": "top",
     "modules-left": [
-        "tray"
-    ],
-    "modules-right": [
+        "custom/launcher",
         "cpu",
         "memory",
-        "pulseaudio",
-        "network",
-        "backlight",
-        "temperature",
-        "battery",
-        "clock"
+        "tray",
+        "hyprland/language"
     ],
-    "tray": {
-        "spacing": 10
+    "modules-right": [
+        "custom/updates",
+        "custom/wallpaper",
+        "backlight",
+        "pulseaudio",
+        "clock",
+        "battery",
+        "custom/power"
+    ],
+    "hyprland/language": {
+        "format": "Lang: {}",
+        "format-us": "AMERICA, HELL YEAH!",
+        "format-tr": "As bayrakları",
+        "keyboard-name": "AT Translated Set 2 keyboard"
     },
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a-%m-%d/%H:%M}"
+    "hyprland/window": {
+        "format": "👉 {}",
+        "separate-outputs": true
     },
-    "cpu": {
-        "format": " {usage}%"
+    "pulseaudio": {
+        "tooltip": false,
+        "scroll-step": 5,
+        "format": "{icon} {volume}%",
+        "format-muted": "{icon} {volume}%",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        }
     },
-    "memory": {
-        "format": " {}%"
+    "network": {
+        "tooltip": false,
+        "format-wifi": "  {essid}",
+        "format-ethernet": ""
     },
     "backlight": {
-        "format": "　{percent}%",
-        "on-scroll-up": "$HOME/.config/waybar/set_light.sh up",
-        "on-scroll-down": "$HOME/.config/waybar/set_light.sh down"
+        "tooltip": false,
+        "format": " {}%",
+        "interval": 1,
+        "on-scroll-up": "doas light -A 5",
+        "on-scroll-down": "doas light -U 5"
     },
     "battery": {
         "states": {
+            "good": 95,
             "warning": 30,
-            "critical": 15
+            "critical": 20
         },
-        "format": "{icon} {capacity}% | {time}",
-        "format-charging": " {capacity}% | {time}",
-        "format-plugged": " {capacity}% | {time}",
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
         "format-icons": [
             "",
             "",
@@ -48,43 +70,38 @@
             ""
         ]
     },
-    "temperature": {
-        "critical-threshold": 90,
-        "format": "{icon} {temperatureC}°C",
-        "format-icons": [
-            "",
-            "",
-            ""
-        ]
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10,
+        "show-passive-items": true
     },
-    "network": {
-        "format-wifi": " {signalStrength}%",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "tooltip-format": "{ifname}:{ipaddr}/{cidr}",
-        "on-click": "nm-connection-editor"
+    "clock": {
+        "format": "{: %I:%M %p   %d/%m/%Y}"
     },
-    "pulseaudio": {
-        "format": "{volume}% {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        },
-        "on-click": "pavucontrol"
+    "cpu": {
+        "interval": 15,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "custom/launcher": {
+        "format": "",
+        "on-click": "bash $HOME/.config/waybar/app-switch.sh $HOME/.config/rofi/launchers/type-2/launcher.sh rofi",
+        "on-click-right": "killall rofi"
+    },
+    "custom/power": {
+        "format": "",
+        "on-click": "wlogout"
+    },
+    "custom/updates": {
+        "format": "{} Update(s)",
+        "exec": "checkupdates | wc -l",
+        "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
+        "interval": 15,
+        "on-click": "alacritty -e paru -Syu && notify-send 'The system has been updated' "
     }
 }
