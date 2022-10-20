@@ -1,0 +1,111 @@
+call plug#begin('~/.config/nvim/plugins')
+let mapleader = ","
+
+" 项目目录管理
+Plug 'scrooloose/nerdtree'
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" 状态栏
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" 主页
+Plug 'mhinz/vim-startify'
+
+" 项目解析
+Plug 'majutsushi/tagbar'
+nnoremap <leader>t :TagbarToggle<cr>
+
+" 配色
+Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
+syntax enable
+set t_Co=256
+let g:rehash256 = 1
+
+" go 支持
+Plug 'fatih/vim-go'
+" vim-go
+let g:go_fmt_command = 'goimports'
+let g:go_autodetect_gopath = 1
+" let g:go_bin_path = '$GOBIN'
+
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_generate_tags = 1
+
+" Open :GoDeclsDir with ctrl-g
+nmap <C-g> :GoDeclsDir<cr>
+imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
+
+augroup go
+  autocmd!
+  autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+augroup END
+
+
+" 代码补全
+
+
+
+
+
+" 错误处理
+Plug 'dense-analysis/ale'
+
+" ale-setting {{{
+let g:ale_set_highlights = 1
+let g:ale_set_quickfix = 1
+"自定义error和warning图标
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚡'
+"在vim自带的状态栏中整合ale
+let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
+"显示Linter名称,出错或警告等相关信息
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+"打开文件时不进行检查
+let g:ale_lint_on_enter = 1
+
+"普通模式下，sp前往上一个错误或警告，sn前往下一个错误或警告
+nmap sp <Plug>(ale_previous_wrap)
+nmap sn <Plug>(ale_next_wrap)
+"<Leader>s触发/关闭语法检查
+" nmap <Leader>l :ALEToggle<CR>
+"<Leader>d查看错误或警告的详细信息
+nmap <Leader>d :ALEDetail<CR>
+let g:ale_linters = {
+    \ 'go': ['golint', 'go vet', 'go fmt'],
+    \ }
+
+" 注释
+Plug 'tpope/vim-commentary'
+
+" 移动光标
+Plug 'easymotion/vim-easymotion'
+
+nmap ss <Plug>(easymotion-s2)
+
+" 查找
+Plug 'tpope/vim-surround'
+
+" 括号成对
+Plug 'jiangmiao/auto-pairs'
+
+" 代码块生成
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+let g:python3_host_prog = '/usr/bin/python3' 
+" 剪贴板
+nnoremap <C-@> :call system("wl-copy", @")<CR>
+call plug#end()
+
+" 应用配色
+colorscheme onenord
