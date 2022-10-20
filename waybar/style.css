@@ -17,6 +17,13 @@ window#waybar.hidden {
     color: #abe9b3;
     background-color: #61bf8e;
     border-radius: 50%;
+    padding-right: 10px;
+}
+#workspaces button {
+    color: #abe9b3;
+    background-color: transparent;
+    border-radius: 50%;
+    padding-right: 10px;
 }
 #workspaces {
     margin-top: 6px;
