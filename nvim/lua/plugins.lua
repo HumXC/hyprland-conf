@@ -2,7 +2,8 @@ return require('packer').startup(function()
   -- 插件管理
   use 'wbthomason/packer.nvim'
   -- 主题
-  use 'shaunsingh/nord.nvim'
+  -- use 'shaunsingh/nord.nvim'
+  use "olimorris/onedarkpro.nvim"
   -- lualine
   use {
   'nvim-lualine/lualine.nvim',
@@ -31,5 +32,9 @@ return require('packer').startup(function()
   use 'rafamadriz/friendly-snippets'
   -- lspkind
   use 'onsails/lspkind-nvim'
-
+  use 'neovim/nvim-lspconfig'
+  use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+}
 end)

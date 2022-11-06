@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 vim.g.maplocalleader= " "
 
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opt = {noremap = true, silent = true}
 
 -- v模式下缩进
@@ -14,14 +14,17 @@ map('n', '<A-m>', ':NvimTreeToggle<CR>', opt)
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 map("n", "<C-c>", ":BufferLinePickClose<CR>", opt)
+map("n", "<S-A-f>", vim.lsp.buf.format, opt)
+map("i", "<S-A-f>", vim.lsp.buf.format, opt)
+map("i", "<C-x>", "<esc>",opt)
 -- nvim-cmp 自动补全
 pluginKeys = {}
 pluginKeys.cmp = function(cmp)
   return {
     -- 上一个
-    ['<C-k>'] = cmp.mapping.select_prev_item(),
+    ['<S-tab>'] = cmp.mapping.select_prev_item(),
     -- 下一个
-    ['<C-j>'] = cmp.mapping.select_next_item(),
+    ['<tab>'] = cmp.mapping.select_next_item(),
     -- 出现补全
     ['<A-.>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
     -- 取消
@@ -44,4 +47,4 @@ end
 
 
 
-
+return pluginKeys

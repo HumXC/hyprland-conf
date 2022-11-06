@@ -1,6 +1,6 @@
 local lspkind = require('lspkind')
 local cmp = require'cmp'
-
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 cmp.setup {
   -- 指定 snippet 引擎
   snippet = {
@@ -64,3 +64,27 @@ cmp.setup.cmdline(':', {
       { name = 'cmdline' }
     })
 })
+-- Setup lspconfig.
+local nvim_lsp = require('lspconfig')
+
+-- setup languages 
+-- GoLang
+nvim_lsp['gopls'].setup{
+  cmd = {'gopls'},
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    gopls = {
+      experimentalPostfixCompletions = true,
+      analyses = {
+        unusedparams = true,
+        shadow = true,
+      },
+      staticcheck = true,
+    },
+  },
+  init_options = {
+    usePlaceholders = true,
+  }
+}
+

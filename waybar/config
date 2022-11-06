@@ -54,7 +54,8 @@
     "network": {
         "tooltip": false,
         "format-wifi": "  {essid}",
-        "format-ethernet": ""
+        "format-ethernet": "",
+        "on-click": "nm-connection-editor"
     },
     "backlight": {
         "tooltip": false,
@@ -90,23 +91,14 @@
         "format": "{: %H:%M  %d/%m/%Y}"
     },
     "cpu": {
-        "interval": 15,
-        "format": " {}%",
+        "interval": 10,
+        "format": " {usage}%",
         "max-length": 10
     },
     "memory": {
         "interval": 30,
         "format": " {}%",
         "max-length": 10
-    },
-    "custom/launcher": {
-        "format": "",
-        "on-click": "bash $HOME/.config/waybar/app-switch.sh $HOME/.config/rofi/launchers/type-2/launcher.sh rofi",
-        "on-click-right": "killall rofi"
-    },
-    "custom/power": {
-        "format": "",
-        "on-click": "wlogout"
     },
     "custom/updates": {
         "format": "{} Update(s)",
