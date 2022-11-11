@@ -1,13 +1,13 @@
 * {
     border: none;
-    border-radius: 10;
+    border-radius: 16;
     font-family: "FiraCode Nerd Font";
     font-size: 15px;
     min-height: 10px;
 }
 
 window#waybar {
-    background: transparent;
+    background: #44b083;
 }
 
 window#waybar.hidden {

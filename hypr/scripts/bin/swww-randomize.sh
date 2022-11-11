@@ -12,19 +12,38 @@ export SWWW_TRANSITION_FPS=60
 export SWWW_TRANSITION_STEP=2
 # This controls (in seconds) when to switch to the next image
 INTERVAL=120
-
-while true; do
+once="once"
+if [ "$1" == "$once" ]; then
 	find "$dir"\
-		| while read -r img; do
-			if [ "$img" != "$dir" ];then
-				echo "$((RANDOM % 1000)):$img"
-			fi
-		done \
-		| sort -n | cut -d':' -f2- \
-		| while read -r img; do
-		echo "$img"
-			swww img "$img"
-			sleep $INTERVAL
-		done
-done
+	| while read -r img; do
+		if [ "$img" != "$dir" ];then
+			echo "$((RANDOM % 1000)):$img"
+		fi
+	done \
+	| sort -n | cut -d':' -f2- \
+	| while read -r img; do
+	echo "$img"
+		swww img "$img"
+		break
+	done
+
+else
+
+	while true; do
+		find "$dir"\
+			| while read -r img; do
+				if [ "$img" != "$dir" ];then
+					echo "$((RANDOM % 1000)):$img"
+				fi
+			done \
+			| sort -n | cut -d':' -f2- \
+			| while read -r img; do
+			echo "$img"
+				swww img "$img"
+				sleep $INTERVAL
+			done
+	done
+fi
+
+
 
