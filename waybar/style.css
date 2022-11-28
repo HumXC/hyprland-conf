@@ -1,13 +1,13 @@
 * {
     border: none;
-    border-radius: 16;
+    border-radius: 12px;
     font-family: "FiraCode Nerd Font";
     font-size: 15px;
     min-height: 10px;
 }
 
 window#waybar {
-    background: #44b083;
+    background: transparent;
 }
 
 window#waybar.hidden {
@@ -16,78 +16,71 @@ window#waybar.hidden {
 #workspaces button.active {
     color: #abe9b3;
     background-color: #44b083;
-    border-radius: 50%;
     padding-right: 10px;
 }
 #workspaces button {
     color: #abe9b3;
     background-color: transparent;
-    border-radius: 50%;
     padding-right: 10px;
 }
 #workspaces {
-    margin-top: 6px;
+    margin-top: 3px;
+    margin-bottom: 0px;
     margin-left: 8px;
     padding-left: 10px;
-    margin-bottom: 0px;
     padding-right: 10px;
-    border-radius: 10px;
     transition: none;
     color: #161320;
     background: #44b083;
 }
 #taskbar {
-    font-size: 24px;
-    margin-top: 6px;
+    margin-top: 3px;
+    margin-bottom: 0px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 10px;
     transition: none;
     background: transparent;
 }
 #window {
-    margin-top: 6px;
+    margin-top: 3px;
+    margin-bottom: 0px;
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 10px;
     transition: none;
     color: transparent;
     background: transparent;
 }
 
 #network {
-    margin-top: 6px;
+    margin-top: 3px;
+    margin-bottom: 0px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
     transition: none;
     color: #161320;
     background: #bd93f9;
 }
 
 #pulseaudio {
-    margin-top: 6px;
+    margin-top: 3px;
+    margin-bottom: 0px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
     transition: none;
     color: #1a1826;
     background: #fae3b0;
 }
 
 #battery {
-    margin-top: 6px;
+    margin-top: 3px;
+    margin-bottom: 0px;
     margin-left: 8px;
     margin-right: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
     transition: none;
     color: #161320;
     background: #b5e8e0;
@@ -117,23 +110,21 @@ window#waybar.hidden {
 }
 
 #backlight {
-    margin-top: 6px;
+    margin-top: 3px;
+    margin-bottom: 0px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
     transition: none;
     color: #161320;
     background: #f8bd96;
 }
 #clock {
-    margin-top: 6px;
+    margin-top: 3px;
+    margin-bottom: 0px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
     transition: none;
     color: #161320;
     background: #abe9b3;
@@ -141,72 +132,55 @@ window#waybar.hidden {
 }
 
 #memory {
-    margin-top: 6px;
+    margin-top: 3px;
+    margin-bottom: 0px;
     margin-left: 8px;
     padding-left: 10px;
-    margin-bottom: 0px;
     padding-right: 10px;
-    border-radius: 10px;
     transition: none;
     color: #161320;
     background: #ddb6f2;
 }
 #cpu {
-    margin-top: 6px;
+    margin-top: 3px;
+    margin-bottom: 0px;
     margin-left: 8px;
     padding-left: 10px;
-    margin-bottom: 0px;
     padding-right: 10px;
-    border-radius: 10px;
     transition: none;
     color: #161320;
     background: #96cdfb;
 }
 
 #tray {
-    margin-top: 6px;
+    margin-top: 3px;
+    margin-bottom: 0px;
     margin-left: 8px;
     padding-left: 10px;
-    margin-bottom: 0px;
     padding-right: 10px;
-    border-radius: 10px;
     transition: none;
     color: #b5e8e0;
     background: #3e455b;
 }
 
-#custom-launcher {
-    font-size: 24px;
-    margin-top: 6px;
-    margin-left: 8px;
-    padding-left: 8px;
-    padding-right: 12px;
-    border-radius: 10px;
-    transition: none;
-    color: #89dceb;
-    background: #161320;
-}
 #custom-power {
-    font-size: 20px;
-    margin-top: 6px;
+    margin-top: 3px;
+    margin-bottom: 0px;
     margin-left: 6px;
     margin-right: 12px;
     padding-left: 8px;
     padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
     transition: none;
     color: #161320;
     background: #f28fad;
 }
 
 #custom-updates {
-    margin-top: 6px;
+    margin-top: 3px;
+    margin-bottom: 0px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
     transition: none;
     color: #161320;
     background: #e8a2af;
