@@ -1,100 +1,47 @@
 * {
     border: none;
-    border-radius: 12px;
     font-family: "FiraCode Nerd Font";
     font-size: 15px;
-    min-height: 10px;
+    min-height: 30px;
 }
 
 window#waybar {
-    background: transparent;
+    background: #1a1826;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
-}
-#workspaces button.active {
-    color: #abe9b3;
-    background-color: #44b083;
-    padding-right: 10px;
-}
-#workspaces button {
-    color: #abe9b3;
-    background-color: transparent;
-    padding-right: 10px;
+    opacity: 0.9;
 }
 #workspaces {
-    margin-top: 3px;
-    margin-bottom: 0px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    transition: none;
-    color: #161320;
-    background: #44b083;
+    padding: 0px 10px 0px 10px;
 }
-#taskbar {
-    margin-top: 3px;
-    margin-bottom: 0px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    transition: none;
-    background: transparent;
+#workspaces button.active {
 }
-#window {
-    margin-top: 3px;
-    margin-bottom: 0px;
-    padding-left: 10px;
-    padding-right: 10px;
-    transition: none;
-    color: transparent;
-    background: transparent;
+#workspaces button {
+    padding-left: 2px;
+    padding-right: 4px;
 }
 
 #network {
-    margin-top: 3px;
-    margin-bottom: 0px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0px 10px 0px 10px;
     transition: none;
-    color: #161320;
-    background: #bd93f9;
 }
 
 #pulseaudio {
-    margin-top: 3px;
-    margin-bottom: 0px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0px 10px 0px 10px;
     transition: none;
-    color: #1a1826;
-    background: #fae3b0;
 }
 
 #battery {
-    margin-top: 3px;
-    margin-bottom: 0px;
-    margin-left: 8px;
-    margin-right: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0px 10px 0px 10px;
     transition: none;
-    color: #161320;
-    background: #b5e8e0;
 }
 
 #battery.charging,
 #battery.plugged {
-    color: #161320;
-    background-color: #b5e8e0;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #b5e8e0;
-    color: #161320;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -110,78 +57,32 @@ window#waybar.hidden {
 }
 
 #backlight {
-    margin-top: 3px;
-    margin-bottom: 0px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0px 10px 0px 10px;
     transition: none;
-    color: #161320;
-    background: #f8bd96;
 }
 #clock {
-    margin-top: 3px;
-    margin-bottom: 0px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0px 10px 0px 10px;
     transition: none;
-    color: #161320;
-    background: #abe9b3;
-    /*background: #1A1826;*/
 }
 
 #memory {
-    margin-top: 3px;
-    margin-bottom: 0px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0px 10px 0px 10px;
     transition: none;
-    color: #161320;
-    background: #ddb6f2;
 }
 #cpu {
-    margin-top: 3px;
-    margin-bottom: 0px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0px 10px 0px 10px;
     transition: none;
-    color: #161320;
-    background: #96cdfb;
 }
 
 #tray {
-    margin-top: 3px;
-    margin-bottom: 0px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0px 10px 0px 10px;
     transition: none;
-    color: #b5e8e0;
-    background: #3e455b;
 }
 
 #custom-power {
-    margin-top: 3px;
-    margin-bottom: 0px;
-    margin-left: 6px;
-    margin-right: 12px;
-    padding-left: 8px;
-    padding-right: 10px;
     transition: none;
-    color: #161320;
-    background: #f28fad;
 }
 
 #custom-updates {
-    margin-top: 3px;
-    margin-bottom: 0px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
     transition: none;
-    color: #161320;
-    background: #e8a2af;
 }

@@ -1,10 +1,12 @@
 {
     "layer": "top",
     "modules-left": [
-        "custom/launcher",
         "cpu",
+        "custom/|",
         "memory",
+        "custom/|",
         "tray",
+        "custom/|",
         "wlr/workspaces"
     ],
     "modules-center": [
@@ -12,29 +14,26 @@
     ],
     "modules-right": [
         "custom/updates",
+        "custom/|",
         "backlight",
+        "custom/|",
         "pulseaudio",
+        "custom/|",
         "network",
-        "battery",
-        "custom/power"
+        "custom/|",
+        "battery"
     ],
     "wlr/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
         "gtk-layer-shell": false,
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
         "format-icons": {
             "urgent": "",
             "active": "",
             "default": ""
         }
-    },
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 20,
-        "icon-theme": "Tela_nord_dark",
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-middle": "close"
     },
     "pulseaudio": {
         "tooltip": false,
@@ -109,5 +108,8 @@
         "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
         "interval": 60,
         "on-click": "kitty -e paru -Syu && notify-send 'The system has been updated' "
+    },
+    "custom/|": {
+        "format": "|"
     }
 }
