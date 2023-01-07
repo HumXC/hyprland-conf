@@ -3,20 +3,27 @@ vim.g.mapleader = " "
 vim.g.maplocalleader= " "
 
 local map = vim.keymap.set
-local opt = {noremap = true, silent = true}
+local opt = {
+    noremap = true, 
+    silent = true,
+}
 
 -- v模式下缩进
 map('v', '<', '<gv', opt)
 map('v', '>', '>gv', opt)
-
-map('n', '<A-m>', ':NvimTreeToggle<CR>', opt)
-
+map('i', 'jj', '<esc>', opt)
+-- 打开文件的选项卡操作
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 map("n", "<C-c>", ":BufferLinePickClose<CR>", opt)
+-- 代码格式化
 map("n", "<S-A-f>", vim.lsp.buf.format, opt)
 map("i", "<S-A-f>", vim.lsp.buf.format, opt)
-map("i", "<C-x>", "<esc>",opt)
+-- nvim-tree的操作
+map('n', '<C-b>', ':NvimTreeToggle<CR>', opt)
+map('i', '<C-b>', ':NvimTreeToggle<CR>', opt)
+map('v', '<C-b>', ':NvimTreeToggle<CR>', opt)
+map('c', '<C-b>', ':NvimTreeToggle<CR>', opt)
 -- nvim-cmp 自动补全
 pluginKeys = {}
 pluginKeys.cmp = function(cmp)

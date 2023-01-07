@@ -14,7 +14,6 @@
     ],
     "modules-right": [
         "custom/updates",
-        "custom/|",
         "backlight",
         "custom/|",
         "pulseaudio",
@@ -103,7 +102,7 @@
         "max-length": 10
     },
     "custom/updates": {
-        "format": "{} Update(s)",
+        "format": "{} Update(s) |",
         "exec": "checkupdates | wc -l",
         "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
         "interval": 60,
