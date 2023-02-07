@@ -34,7 +34,7 @@ opt.incsearch = true
 -- 使用增强状态栏后不再需要 vim 的模式提示
 opt.showmode = false
 -- 命令行高为2，提供足够的显示空间
-opt.cmdheight = 0
+opt.cmdheight = 1
 -- 当文件被外部程序修改时，自动加载
 opt.autoread = true
 vim.bo.autoread = true
@@ -54,7 +54,7 @@ opt.swapfile = false
 -- smaller updatetime 
 opt.updatetime = 300
 -- 等待mappings
-opt.timeoutlen = 200
+opt.timeoutlen = 500
 -- split window 从下边和右边出现
 opt.splitbelow = true
 opt.splitright = true

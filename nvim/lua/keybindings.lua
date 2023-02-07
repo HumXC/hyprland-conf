@@ -13,17 +13,23 @@ map('v', '<', '<gv', opt)
 map('v', '>', '>gv', opt)
 map('i', 'jj', '<esc>', opt)
 -- 打开文件的选项卡操作
-map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
-map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
-map("n", "<C-c>", ":BufferLinePickClose<CR>", opt)
+map("n", "<A-,>", ":BufferPrevious<CR>", opt)
+map("n", "<A-.>", ":BufferNext<CR>", opt)
+map("n", "<C-c>", ":BufferClose<CR>", opt)
+map("n", "<C-p>", ":BufferPick<CR>", opt)
+
 -- 代码格式化
 map("n", "<S-A-f>", vim.lsp.buf.format, opt)
 map("i", "<S-A-f>", vim.lsp.buf.format, opt)
 -- nvim-tree的操作
-map('n', '<C-b>', ':NvimTreeToggle<CR>', opt)
-map('i', '<C-b>', ':NvimTreeToggle<CR>', opt)
-map('v', '<C-b>', ':NvimTreeToggle<CR>', opt)
-map('c', '<C-b>', ':NvimTreeToggle<CR>', opt)
+map('n', '<leader>t', ':NvimTreeToggle<CR>', opt)
+map('i', '<leader>t', ':NvimTreeToggle<CR>', opt)
+map('v', '<leader>t', ':NvimTreeToggle<CR>', opt)
+map('c', '<leader>t', ':NvimTreeToggle<CR>', opt)
+-- aerial
+map('n', '<{>', ':AerialPrev<CR>', opt)
+map('n', '<}>', ':AerialNext<CR>', opt)
+map('n', '<leader>f', ':AerialToggle<CR>', opt)
 -- nvim-cmp 自动补全
 pluginKeys = {}
 pluginKeys.cmp = function(cmp)

@@ -5,10 +5,12 @@ return require('packer').startup(function()
   -- use 'shaunsingh/nord.nvim'
   use "olimorris/onedarkpro.nvim"
   -- lualine
+  use 'nvim-tree/nvim-web-devicons'
   use {
-  'nvim-lualine/lualine.nvim',
-  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    'nvim-lualine/lualine.nvim',
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
+  -- nvim-tree
   use {
     'nvim-tree/nvim-tree.lua',
   requires = {
@@ -16,11 +18,8 @@ return require('packer').startup(function()
   },
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
-  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'kyazdani42/nvim-web-devicons'}
-  
-  use 'mhinz/vim-startify'
-  
-    -- nvim-cmp
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+  -- nvim-cmp
   use 'hrsh7th/cmp-nvim-lsp' -- { name = nvim_lsp }
   use 'hrsh7th/cmp-buffer'   -- { name = 'buffer' },
   use 'hrsh7th/cmp-path'     -- { name = 'path' }
@@ -34,7 +33,10 @@ return require('packer').startup(function()
   use 'onsails/lspkind-nvim'
   use 'neovim/nvim-lspconfig'
   use {
-	"windwp/nvim-autopairs",
+    "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
-}
+ }
+ use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
+ -- 开始界面
+ use 'mhinz/vim-startify'
 end)
