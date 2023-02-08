@@ -1,38 +1,56 @@
 {
+    "margin-top": 4,
+    "margin-left": 4,
+    "margin-right": 4,
+    "spacing": 0,
     "layer": "top",
     "modules-left": [
-        "cpu",
-        "custom/|",
-        "memory",
-        "custom/|",
         "tray",
-        "custom/|",
-        "wlr/workspaces"
+        "custom/updates"
     ],
     "modules-center": [
         "clock"
     ],
     "modules-right": [
-        "custom/updates",
         "backlight",
-        "custom/|",
         "pulseaudio",
-        "custom/|",
         "network",
-        "custom/|",
         "battery"
     ],
-    "wlr/workspaces": {
-        "format": "{icon}",
-        "on-click": "activate",
-        "gtk-layer-shell": false,
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1",
-        "format-icons": {
-            "urgent": "",
-            "active": "",
-            "default": ""
-        }
+    "cpu": {
+        "format": "{usage}"
+    },
+    "memory": {
+        "interval": 30,
+        "format": "{}",
+        "max-length": 10
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10,
+        "show-passive-items": true
+    },
+    "custom/updates": {
+        "format": "{} Update(s)",
+        "exec": "checkupdates | wc -l",
+        "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
+        "interval": 60,
+        "on-click": "kitty -e paru -Syu && notify-send 'The system has been updated' "
+    },
+    "clock": {
+        "format": "<b>{:%H:%M}</b>",
+        "format-alt": "{:%Y %m/%d %A} ",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
+    "backlight": {
+        "tooltip": false,
+        "format": " {}%",
+        "interval": 1,
+        "on-scroll-up": "light -A 1",
+        "on-scroll-down": "light -U 1",
+        "on-click": "light -A 20",
+        "on-click-right": "light -U 20",
+        "on-click-middle": "sh $HOME/.config/hypr/scripts/bin/swww-randomize.sh once"
     },
     "pulseaudio": {
         "tooltip": false,
@@ -55,16 +73,6 @@
         "format-ethernet": "",
         "on-click": "sh $HOME/.config/hypr/scripts/bin/app-switch.sh nm-connection-editor nm-connection-editor"
     },
-    "backlight": {
-        "tooltip": false,
-        "format": " {}%",
-        "interval": 1,
-        "on-scroll-up": "light -A 1",
-        "on-scroll-down": "light -U 1",
-        "on-click": "light -A 20",
-        "on-click-right": "light -U 20",
-        "on-click-middle": "sh $HOME/.config/hypr/scripts/bin/swww-randomize.sh once"
-    },
     "battery": {
         "states": {
             "good": 95,
@@ -82,33 +90,5 @@
             "",
             ""
         ]
-    },
-    "tray": {
-        "icon-size": 18,
-        "spacing": 10,
-        "show-passive-items": true
-    },
-    "clock": {
-        "format": "{: %H:%M  %d/%m/%Y}"
-    },
-    "cpu": {
-        "interval": 10,
-        "format": " {usage}%",
-        "max-length": 10
-    },
-    "memory": {
-        "interval": 30,
-        "format": " {}%",
-        "max-length": 10
-    },
-    "custom/updates": {
-        "format": "{} Update(s) |",
-        "exec": "checkupdates | wc -l",
-        "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
-        "interval": 60,
-        "on-click": "kitty -e paru -Syu && notify-send 'The system has been updated' "
-    },
-    "custom/|": {
-        "format": "|"
     }
 }
