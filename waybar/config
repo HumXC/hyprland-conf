@@ -1,94 +1,116 @@
-{
-    "margin-top": 4,
-    "margin-left": 4,
-    "margin-right": 4,
-    "spacing": 0,
-    "layer": "top",
-    "modules-left": [
-        "tray",
-        "custom/updates"
-    ],
-    "modules-center": [
-        "clock"
-    ],
-    "modules-right": [
-        "backlight",
-        "pulseaudio",
-        "network",
-        "battery"
-    ],
-    "cpu": {
-        "format": "{usage}"
-    },
-    "memory": {
-        "interval": 30,
-        "format": "{}",
-        "max-length": 10
-    },
-    "tray": {
-        "icon-size": 18,
-        "spacing": 10,
-        "show-passive-items": true
-    },
-    "custom/updates": {
-        "format": "{} Update(s)",
-        "exec": "checkupdates | wc -l",
-        "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
-        "interval": 60,
-        "on-click": "kitty -e paru -Syu && notify-send 'The system has been updated' "
-    },
-    "clock": {
-        "format": "<b>{:%H:%M}</b>",
-        "format-alt": "{:%Y %m/%d %A} ",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>"
-    },
-    "backlight": {
-        "tooltip": false,
-        "format": " {}%",
-        "interval": 1,
-        "on-scroll-up": "light -A 1",
-        "on-scroll-down": "light -U 1",
-        "on-click": "light -A 20",
-        "on-click-right": "light -U 20",
-        "on-click-middle": "sh $HOME/.config/hypr/scripts/bin/swww-randomize.sh once"
-    },
-    "pulseaudio": {
-        "tooltip": false,
-        "scroll-step": 5,
-        "format": "{icon} {volume}%",
-        "format-muted": "{icon} {volume}%",
-        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click": "sh $HOME/.config/hypr/scripts/bin/app-switch.sh pavucontrol pavucontrol",
-        "format-icons": {
-            "default": [
-                "",
-                "",
-                ""
+[
+    {
+        "name": "top-bar",
+        "margin-top": 4,
+        "margin-left": 4,
+        "margin-right": 4,
+        "spacing": 0,
+        "layer": "top",
+        "modules-left": [
+            "tray",
+            "custom/updates"
+        ],
+        "modules-center": [
+            "clock"
+        ],
+        "modules-right": [
+            "backlight",
+            "pulseaudio",
+            "network",
+            "battery"
+        ],
+        "cpu": {
+            "format": "{usage}"
+        },
+        "memory": {
+            "interval": 30,
+            "format": "{}",
+            "max-length": 10
+        },
+        "tray": {
+            "icon-size": 18,
+            "spacing": 10,
+            "show-passive-items": true
+        },
+        "custom/updates": {
+            "format": "{}",
+            "exec": "checkupdates | wc -l",
+            "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
+            "interval": 60,
+            "on-click": "kitty -e paru -Syu && notify-send 'The system has been updated' "
+        },
+        "clock": {
+            "format": "<b>{:%H:%M}</b>",
+            "format-alt": "{:%Y %m/%d %A} ",
+            "tooltip-format": "<tt><small>{calendar}</small></tt>"
+        },
+        "backlight": {
+            "tooltip": false,
+            "format": " {}%",
+            "interval": 1,
+            "on-scroll-up": "light -A 1",
+            "on-scroll-down": "light -U 1",
+            "on-click": "light -A 20",
+            "on-click-right": "light -U 20",
+            "on-click-middle": "sh $HOME/.config/hypr/scripts/bin/swww-randomize.sh once"
+        },
+        "pulseaudio": {
+            "tooltip": false,
+            "scroll-step": 5,
+            "format": "{icon} {volume}%",
+            "format-muted": "{icon} {volume}%",
+            "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+            "on-click": "sh $HOME/.config/hypr/scripts/bin/app-switch.sh pavucontrol pavucontrol",
+            "format-icons": {
+                "default": [
+                    "",
+                    "",
+                    ""
+                ]
+            }
+        },
+        "network": {
+            "tooltip": false,
+            "format-wifi": "  {essid}",
+            "format-ethernet": "",
+            "on-click": "sh $HOME/.config/hypr/scripts/bin/app-switch.sh nm-connection-editor nm-connection-editor"
+        },
+        "battery": {
+            "full-at": 96,
+            "states": {
+                "good": 95,
+                "warning": 30,
+                "critical": 20
+            },
+            "format": "{icon}  {capacity}%",
+            "format-charging": " {capacity}%",
+            "format-plugged": " {capacity}%",
+            "format-alt": "{time} {icon} ",
+            "format-icons": [
+                "",
+                "",
+                "",
+                "",
+                ""
             ]
         }
     },
-    "network": {
-        "tooltip": false,
-        "format-wifi": "  {essid}",
-        "format-ethernet": "",
-        "on-click": "sh $HOME/.config/hypr/scripts/bin/app-switch.sh nm-connection-editor nm-connection-editor"
-    },
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 20
-        },
-        "format": "{icon}  {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon} ",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
+    {
+        "name": "bottom-bar",
+        "margin-bottom": 12,
+        "spacing": 0,
+        "layer": "bottom",
+        "exclusive": false,
+        "position": "bottom",
+        "modules-center": [
+            "wlr/taskbar"
+        ],
+        "wlr/taskbar": {
+            "format": "{icon}",
+            "icon-size": 43,
+            "tooltip-format": "{title}",
+            "on-click": "activate",
+            "on-click-middle": "close"
+        }
     }
-}
+]
