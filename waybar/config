@@ -4,11 +4,11 @@
         "margin-top": 4,
         "margin-left": 4,
         "margin-right": 4,
+        "height": 40,
         "spacing": 0,
         "layer": "top",
         "modules-left": [
-            "tray",
-            "custom/updates"
+            "tray"
         ],
         "modules-center": [
             "clock"
@@ -33,7 +33,7 @@
             "show-passive-items": true
         },
         "custom/updates": {
-            "format": "{}",
+            "format": "{} Update(s)",
             "exec": "checkupdates | wc -l",
             "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
             "interval": 60,
@@ -72,8 +72,7 @@
         "network": {
             "tooltip": false,
             "format-wifi": "  {essid}",
-            "format-ethernet": "",
-            "on-click": "sh $HOME/.config/hypr/scripts/bin/app-switch.sh nm-connection-editor nm-connection-editor"
+            "format-ethernet": ""
         },
         "battery": {
             "full-at": 96,
@@ -93,6 +92,39 @@
                 "",
                 ""
             ]
+        }
+    },
+    {
+        "name": "updates",
+        "margin-top": 12,
+        "margin-left": 12,
+        "spacing": 0,
+        "height": 60,
+        "layer": "bottom",
+        "exclusive": false,
+        "position": "top",
+        "modules-left": [
+            "custom/check",
+            "custom/icon",
+            "custom/num"
+        ],
+        "custom/check": {
+            "exec": "num=`checkupdates | wc -l`;echo $num > .config/waybar/update",
+            "interval": 3600
+        },
+        "custom/num": {
+            "format": "{}",
+            "exec": "cat .config/waybar/update",
+            "exec-if": "[[ `cat .config/waybar/update` != 0 ]]",
+            "interval": 63,
+            "on-click": "kitty -e paru -Syu; notify-send 'The system has been updated'"
+        },
+        "custom/icon": {
+            "format": "{}",
+            "exec": "echo 󰁟",
+            "interval": 63,
+            "exec-if": "[[ `cat .config/waybar/update` != 0 ]]",
+            "on-click": "kitty -e paru -Syu; notify-send 'The system has been updated'"
         }
     },
     {

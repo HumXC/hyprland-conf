@@ -1,6 +1,6 @@
 * {
     border: none;
-    font-family: "MiSans";
+    font-family: "MiSans", "FiraCode Nerd Font", Retina;
     font-size: 16px;
 }
 
@@ -26,70 +26,32 @@
     margin-top: 2px;
     margin-bottom: 2px;
 }
-
-.top-bar #cpu,
-#memory,
-#tary,
-#custom-updates {
-    padding: 2px 0 2px 0;
-}
-
-.top-bar #cpu {
-    margin-left: 12px;
-    margin-right: 4px;
-}
-
-.top-bar #memory {
-    margin-left: 4px;
-}
-
-.top-bar #tray {
-    padding: 0 10px 0 10px;
-    background-color: #3a4558;
+.top-bar #tray,
+#clock,
+#backlight,
+#pulseaudio,
+#network,
+#battery {
     margin-left: 8px;
+    margin-right: 8px;
+    background-color: #566277;
+    padding: 0 12px 0 12px;
 }
-
-.top-bar #custom-updates {
-    margin-left: 20px;
-    background-color: #515860;
-    padding-left: 12px;
-    padding-right: 12px;
+.top-bar #tray {
+    margin-left: 12px;
 }
 
 .top-bar #clock {
-    padding: 0px 10px 0px 10px;
-}
-
-.top-bar #backlight {
-    padding: 0px 10px 0px 10px;
-    background-color: #3b3d42;
-    margin-right: 4px;
-}
-
-.top-bar #pulseaudio {
-    padding: 0px 10px 0px 10px;
-    background-color: #3b3d42;
-    margin-left: 4px;
-    margin-right: 4px;
-}
-
-.top-bar #network {
-    padding: 0px 10px 0px 10px;
-    background-color: #3b3d42;
-    margin-left: 4px;
-    margin-right: 4px;
-}
-
-.top-bar #battery {
-    padding: 0px 10px 0px 10px;
-    background-color: #3b3d42;
-    margin-right: 8px;
-    margin-left: 4px;
+    background-color: transparent;
 }
 .top-bar #network {
     background: linear-gradient(270deg, #0e3d30, #547214, #1a648b, #4a1e34) center / cover;
     background-size: 800% 800%;
     animation: AnimationName 30s ease infinite;
+}
+
+.top-bar #battery {
+    margin-right: 12px;
 }
 @keyframes AnimationName {
     0% {
@@ -101,6 +63,30 @@
     100% {
         background-position: 0% 50%;
     }
+}
+/* update-bar */
+.updates {
+    background-color: transparent;
+}
+.updates #custom-icon,
+#custom-num {
+    background-color: #52d546;
+    border-color: aliceblue;
+    border-style: solid;
+}
+.updates #custom-icon {
+    border-radius: 20px 0 0 20px;
+    padding-right: 16px;
+    padding-left: 12px;
+    font-size: 40px;
+    border-width: 4 0 4 4;
+}
+.updates #custom-num {
+    border-radius: 0 20px 20px 0;
+    padding-right: 12px;
+    font-weight: bold;
+    font-size: 24px;
+    border-width: 4 4 4 0;
 }
 
 /* botom-bar */
