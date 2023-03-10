@@ -60,7 +60,10 @@
                     "",
                     ""
                 ]
-            }
+            },
+            "ignored-sinks": [
+                "Easy Effects Sink"
+            ]
         },
         "network": {
             "tooltip": false,
