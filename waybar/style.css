@@ -88,6 +88,24 @@
     font-size: 24px;
     border-width: 4 4 4 0;
 }
+/* time */
+.time {
+    background-color: transparent;
+}
+.time #clock.h,
+#clock.m {
+    padding: 0 20px 0 20px;
+    background-color: rgba(0, 0, 0, 0.42);
+}
+.time #clock.h {
+    font-size: 120px;
+    border-radius: 20px 20px 0 0;
+}
+.time #clock.m {
+    font-size: 120px;
+    border-radius: 0 0 20px 20px;
+    padding-bottom: 12px;
+}
 
 /* botom-bar */
 .bottom-bar {

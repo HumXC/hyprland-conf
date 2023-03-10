@@ -32,16 +32,9 @@
             "spacing": 10,
             "show-passive-items": true
         },
-        "custom/updates": {
-            "format": "{} Update(s)",
-            "exec": "checkupdates | wc -l",
-            "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
-            "interval": 60,
-            "on-click": "kitty -e paru -Syu && notify-send 'The system has been updated' "
-        },
         "clock": {
             "format": "<b>{:%H:%M}</b>",
-            "format-alt": "{:%Y %m/%d %A} ",
+            "format-alt": "<b>{:%Y %m/%d %A}</b>",
             "tooltip-format": "<tt><small>{calendar}</small></tt>"
         },
         "backlight": {
@@ -125,6 +118,27 @@
             "interval": 63,
             "exec-if": "[[ `cat .config/waybar/update` != 0 ]]",
             "on-click": "kitty -e paru -Syu; notify-send 'The system has been updated'"
+        }
+    },
+    {
+        "name": "time",
+        "margin-top": 50,
+        "margin-right": 60,
+        "spacing": 0,
+        "layer": "bottom",
+        "exclusive": false,
+        "position": "right",
+        "modules-left": [
+            "clock#h",
+            "clock#m"
+        ],
+        "clock#h": {
+            "format": "<span face=\"monospace\">{:%H}</span>",
+            "tooltip-format": "<span size=\"x-large\">{:%m/%d %A}</span>"
+        },
+        "clock#m": {
+            "format": "<span face=\"monospace\">{:%M}</span>",
+            "tooltip-format": "<span size=\"x-large\">{:%m/%d %A}</span>"
         }
     },
     {
