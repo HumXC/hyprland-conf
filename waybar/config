@@ -98,8 +98,8 @@
         }
     },
     {
-        "name": "cpu",
-        "margin-top": 12,
+        "name": "disk",
+        "margin-top": 156,
         "margin-left": 12,
         "spacing": 0,
         "height": 60,
@@ -108,13 +108,14 @@
         "position": "top",
         "modules-left": [
             "custom/icon",
-            "cpu"
+            "disk"
         ],
         "cpu": {
-            "format": "{avg_frequency}GHz | {usage}%"
+            "format": "{}"
         },
         "custom/icon": {
-            "format": "󰘚"
+            "format": "󰋊",
+            "tooltip": false
         }
     },
     {
@@ -135,12 +136,13 @@
             "format": "{used:0.2f}G / {total:0.1f}G"
         },
         "custom/icon": {
-            "format": "󰍛"
+            "format": "󰍛",
+            "tooltip": false
         }
     },
     {
-        "name": "disk",
-        "margin-top": 156,
+        "name": "cpu",
+        "margin-top": 12,
         "margin-left": 12,
         "spacing": 0,
         "height": 60,
@@ -149,13 +151,14 @@
         "position": "top",
         "modules-left": [
             "custom/icon",
-            "disk"
+            "cpu"
         ],
         "cpu": {
-            "format": "{}"
+            "format": "{avg_frequency}GHz | {usage}%"
         },
         "custom/icon": {
-            "format": "󰋊"
+            "format": "󰘚",
+            "tooltip": false
         }
     },
     {
@@ -258,7 +261,8 @@
         ],
         "custom/prev": {
             "format": "<span>󰙣</span>",
-            "on-click": "mpc prev;echo kkd"
+            "on-click": "mpc prev;echo kkd",
+            "tooltip": false
         },
         "custom/next": {
             "format": "<span>󰙡</span>",
