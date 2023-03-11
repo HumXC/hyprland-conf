@@ -64,6 +64,58 @@
         background-position: 0% 50%;
     }
 }
+/* cpu-bar */
+.cpu {
+    background-color: transparent;
+}
+.cpu #custom-icon,
+#cpu {
+    color: rgba(255, 255, 255, 0.656);
+    background-color: rgba(57, 65, 73, 0.851);
+    border-color: rgb(145, 145, 145);
+    border-style: solid;
+}
+.cpu #custom-icon {
+    border-radius: 20px 0 0 20px;
+    padding-right: 16px;
+    padding-left: 12px;
+    font-size: 40px;
+    border-width: 4px 0 4px 4px;
+}
+.cpu #cpu {
+    border-radius: 0 20px 20px 0;
+    padding-right: 12px;
+    font-weight: bold;
+    font-size: 24px;
+    border-width: 4px 4px 4px 0;
+}
+
+/* disk-bar */
+.disk {
+    background-color: transparent;
+}
+.disk #custom-icon,
+#disk {
+    color: rgba(255, 255, 255, 0.656);
+    background-color: rgba(57, 65, 73, 0.851);
+    border-color: rgb(145, 145, 145);
+    border-style: solid;
+}
+.disk #custom-icon {
+    border-radius: 20px 0 0 20px;
+    padding-right: 16px;
+    padding-left: 12px;
+    font-size: 40px;
+    border-width: 4px 0 4px 4px;
+}
+.disk #disk {
+    border-radius: 0 20px 20px 0;
+    padding-right: 12px;
+    font-weight: bold;
+    font-size: 24px;
+    border-width: 4px 4px 4px 0;
+}
+
 /* update-bar */
 .updates {
     background-color: transparent;
@@ -77,16 +129,17 @@
 .updates #custom-icon {
     border-radius: 20px 0 0 20px;
     padding-right: 16px;
-    padding-left: 12px;
+    padding-left: 8px;
     font-size: 40px;
-    border-width: 4 0 4 4;
+    border-width: 4px 0 4px 4px;
 }
 .updates #custom-num {
     border-radius: 0 20px 20px 0;
     padding-right: 12px;
+    padding-left: 4px;
     font-weight: bold;
-    font-size: 24px;
-    border-width: 4 4 4 0;
+    font-size: 26px;
+    border-width: 4px 4px 4px 0;
 }
 /* time */
 .time {

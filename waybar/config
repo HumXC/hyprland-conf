@@ -39,7 +39,7 @@
         },
         "backlight": {
             "tooltip": false,
-            "format": " {}%",
+            "format": " {}%",
             "interval": 1,
             "on-scroll-up": "light -A 1",
             "on-scroll-down": "light -U 1",
@@ -67,7 +67,7 @@
         },
         "network": {
             "tooltip": false,
-            "format-wifi": "  {essid}",
+            "format-wifi": "   {essid}",
             "format-ethernet": ""
         },
         "battery": {
@@ -77,9 +77,9 @@
                 "warning": 30,
                 "critical": 20
             },
-            "format": "{icon}  {capacity}%",
-            "format-charging": " {capacity}%",
-            "format-plugged": " {capacity}%",
+            "format": "{icon} {capacity}%",
+            "format-charging": "  {capacity}%",
+            "format-plugged": "  {capacity}%",
             "format-alt": "{time} {icon} ",
             "format-icons": [
                 "",
@@ -91,8 +91,48 @@
         }
     },
     {
-        "name": "updates",
+        "name": "cpu",
         "margin-top": 12,
+        "margin-left": 12,
+        "spacing": 0,
+        "height": 60,
+        "layer": "bottom",
+        "exclusive": false,
+        "position": "top",
+        "modules-left": [
+            "custom/icon",
+            "cpu"
+        ],
+        "cpu": {
+            "format": "{avg_frequency}GHz | {usage}%"
+        },
+        "custom/icon": {
+            "format": "󰘚"
+        }
+    },
+    {
+        "name": "disk",
+        "margin-top": 84,
+        "margin-left": 12,
+        "spacing": 0,
+        "height": 60,
+        "layer": "bottom",
+        "exclusive": false,
+        "position": "top",
+        "modules-left": [
+            "custom/icon",
+            "disk"
+        ],
+        "cpu": {
+            "format": "{}"
+        },
+        "custom/icon": {
+            "format": "󰋊"
+        }
+    },
+    {
+        "name": "updates",
+        "margin-top": 156,
         "margin-left": 12,
         "spacing": 0,
         "height": 60,
@@ -113,14 +153,24 @@
             "exec": "cat .config/waybar/update",
             "exec-if": "[[ `cat .config/waybar/update` != 0 ]]",
             "interval": 63,
-            "on-click": "kitty -e paru -Syu; notify-send 'The system has been updated'"
+            "signal": 8,
+            "on-click": "kitty -e paru -Syu; echo 0 > .config/waybar/update; notify-send 'The system has been updated'; pkill -SIGRTMIN+8 waybar"
         },
         "custom/icon": {
             "format": "{}",
             "exec": "echo 󰁟",
             "interval": 63,
+            "signal": 8,
             "exec-if": "[[ `cat .config/waybar/update` != 0 ]]",
-            "on-click": "kitty -e paru -Syu; notify-send 'The system has been updated'"
+            "on-click": "kitty -e paru -Syu; echo 0 > .config/waybar/update; notify-send 'The system has been updated'; pkill -SIGRTMIN+8 waybar"
+        },
+        "custom/num-other": {
+            "format": "<span size=\"xx-large\" >󰁟 </span><span size=\"large\">{}</span>",
+            "exec": "cat .config/waybar/update",
+            "exec-if": "[[ `cat .config/waybar/update` != 0 ]]",
+            "interval": 63,
+            "signal": 8,
+            "on-click": "kitty -e paru -Syu; notify-send 'The system has been updated'; echo 0 > .config/waybar/update; pkill -SIGRTMIN+8 waybar"
         }
     },
     {
@@ -157,7 +207,6 @@
         "wlr/taskbar": {
             "format": "{icon}",
             "icon-size": 43,
-            "tooltip-format": "{title}",
             "on-click": "activate",
             "on-click-middle": "close"
         }
