@@ -164,26 +164,28 @@
 .mpd-control {
     background: transparent;
 }
+.mpd-info #mpd,
+.mpd-control #custom-prev,
+#custom-status,
+#custom-next {
+    background-color: #4ea643;
+}
 .mpd-info #mpd {
-    background-color: #e86767;
     border-radius: 20px 20px 0 0;
     padding-top: 8px;
     font-size: 18px;
 }
 .mpd-control #custom-prev {
-    background-color: #e86767;
     font-size: 50px;
     padding: 0 14px 0 20px;
     border-radius: 0 0 0 20px;
 }
 .mpd-control #custom-next {
-    background-color: #e86767;
     font-size: 50px;
     padding: 0 34px 0 14px;
     border-radius: 0 0 20px 0;
 }
 .mpd-control #custom-status {
-    background-color: #e86767;
     font-size: 60px;
     padding: 0 18px 0 16px;
 }
