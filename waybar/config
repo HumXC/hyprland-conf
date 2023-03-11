@@ -8,7 +8,8 @@
         "spacing": 0,
         "layer": "top",
         "modules-left": [
-            "tray"
+            "tray",
+            "temperature#4"
         ],
         "modules-center": [
             "clock"
@@ -19,13 +20,19 @@
             "network",
             "battery"
         ],
-        "cpu": {
-            "format": "{usage}"
+        "temperature#1": {
+            "thermal-zone": 1,
+            "hwmon-path": "/sys/class/hwmon/hwmon1/in0_input",
+            "critical-threshold": 80,
+            "format-critical": "<b>{temperatureC}°C </b>",
+            "format": "{temperatureC}°C "
         },
-        "memory": {
-            "interval": 30,
-            "format": "{}",
-            "max-length": 10
+        "temperature#4": {
+            "thermal-zone": 4,
+            "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+            "critical-threshold": 80,
+            "format-critical": "<span color=\"#fd5757\"> <b>{temperatureC}°C</b></span>",
+            "format": "<b> {temperatureC}°C</b>"
         },
         "tray": {
             "icon-size": 18,
