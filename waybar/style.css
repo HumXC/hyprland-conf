@@ -64,56 +64,71 @@
         background-position: 0% 50%;
     }
 }
-/* cpu-bar */
-.cpu {
+/* 左侧信息栏的统一样式 */
+.cpu,
+.disk,
+.memory {
     background-color: transparent;
 }
-.cpu #custom-icon,
-#cpu {
+.cpu #cpu,
+#custom-icon,
+.disk #disk,
+#custom-icon,
+.memory #memory,
+#custom-icon {
     color: rgba(255, 255, 255, 0.656);
     background-color: rgba(57, 65, 73, 0.851);
     border-color: rgb(145, 145, 145);
     border-style: solid;
 }
-.cpu #custom-icon {
+/* 图标左半边 */
+.cpu #custom-icon,
+.disk #custom-icon,
+.memory #custom-icon {
     border-radius: 20px 0 0 20px;
+    border-width: 4px 0 4px 4px;
+}
+
+/* 右半边 */
+.cpu #cpu,
+.disk #disk,
+.memory #memory {
+    border-radius: 0 20px 20px 0;
+    border-width: 4px 4px 4px 0;
+}
+/* cpu-bar */
+.cpu #custom-icon {
     padding-right: 16px;
     padding-left: 12px;
     font-size: 40px;
-    border-width: 4px 0 4px 4px;
 }
 .cpu #cpu {
-    border-radius: 0 20px 20px 0;
     padding-right: 12px;
     font-weight: bold;
     font-size: 24px;
-    border-width: 4px 4px 4px 0;
 }
 
 /* disk-bar */
-.disk {
-    background-color: transparent;
-}
-.disk #custom-icon,
-#disk {
-    color: rgba(255, 255, 255, 0.656);
-    background-color: rgba(57, 65, 73, 0.851);
-    border-color: rgb(145, 145, 145);
-    border-style: solid;
-}
 .disk #custom-icon {
-    border-radius: 20px 0 0 20px;
     padding-right: 16px;
     padding-left: 12px;
     font-size: 40px;
-    border-width: 4px 0 4px 4px;
 }
 .disk #disk {
-    border-radius: 0 20px 20px 0;
     padding-right: 12px;
     font-weight: bold;
     font-size: 24px;
-    border-width: 4px 4px 4px 0;
+}
+/* memory-bar */
+.memory #custom-icon {
+    padding-right: 16px;
+    padding-left: 12px;
+    font-size: 40px;
+}
+.memory #memory {
+    padding-right: 12px;
+    font-weight: bold;
+    font-size: 24px;
 }
 
 /* update-bar */
