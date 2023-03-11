@@ -195,6 +195,62 @@
         }
     },
     {
+        "name": "mpd-control",
+        "margin-top": 400,
+        "margin-left": 12,
+        "spacing": 0,
+        "height": 60,
+        "layer": "bottom",
+        "exclusive": false,
+        "position": "top",
+        "modules-left": [
+            "custom/prev",
+            "custom/status",
+            "custom/next"
+        ],
+        "cpu": {
+            "format": "{}"
+        },
+        "custom/prev": {
+            "format": "<span>󰙣</span>",
+            "on-click": "mpc prev",
+            "tooltip": false
+        },
+        "custom/next": {
+            "format": "<span>󰙡</span>",
+            "on-click": "mpc next",
+            "tooltip": false
+        },
+        "custom/status": {
+            "format": "{}",
+            "exec": ".config/waybar/scripts/mpd.sh --status",
+            "signal": 12,
+            "interval": 10,
+            "tooltip": false,
+            "on-click": "mpc toggle; pkill -SIGRTMIN+12 waybar"
+        }
+    },
+    {
+        "name": "mpd-info",
+        "margin-top": 375,
+        "margin-left": 12,
+        "spacing": 0,
+        "width": 215,
+        "layer": "bottom",
+        "exclusive": false,
+        "position": "left",
+        "modules-left": [
+            "mpd",
+            "custom/fill"
+        ],
+        "mpd": {
+            "interval": 10,
+            "format-disconnected": "Disconnected",
+            "format": "<b>{elapsedTime:%M:%S} / {totalTime:%M:%S}</b>",
+            "tooltip-format": "{artist} - {title}"
+        }
+    },
+    {
         "name": "bottom-bar",
         "margin-bottom": 12,
         "spacing": 0,
