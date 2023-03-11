@@ -210,7 +210,8 @@
         "mpd": {
             "interval": 10,
             "format-disconnected": "Disconnected",
-            "format": "<b>{elapsedTime:%M:%S} / {totalTime:%M:%S}</b>"
+            "format": "<b>{elapsedTime:%M:%S} / {totalTime:%M:%S}</b>",
+            "on-click": "kitty -T ncmpcpp -e ncmpcpp"
         }
     },
     {
