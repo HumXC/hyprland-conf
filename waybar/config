@@ -9,6 +9,7 @@
         "layer": "top",
         "modules-left": [
             "tray",
+            "network#2",
             "temperature#4"
         ],
         "modules-center": [
@@ -20,6 +21,11 @@
             "network",
             "battery"
         ],
+        "network#2": {
+            "interface": "wlan0",
+            "interval": 3,
+            "format": "  {bandwidthUpBytes}    {bandwidthDownBytes}"
+        },
         "temperature#1": {
             "thermal-zone": 1,
             "hwmon-path": "/sys/class/hwmon/hwmon1/in0_input",
@@ -84,7 +90,7 @@
                 "warning": 30,
                 "critical": 20
             },
-            "format": "{icon} {capacity}%",
+            "format": "{icon}  {capacity}%",
             "format-charging": "  {capacity}%",
             "format-plugged": "  {capacity}%",
             "format-alt": "{time} {icon} ",
