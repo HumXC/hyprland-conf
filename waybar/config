@@ -187,7 +187,7 @@
             "exec-if": "[[ `cat .config/waybar/update` != 0 ]]",
             "interval": 63,
             "signal": 8,
-            "on-click": "kitty -e paru -Syu; echo 0 > .config/waybar/update; notify-send 'The system has been updated'; pkill -SIGRTMIN+8 waybar"
+            "on-click": "kitty --hold -e paru -Syu; echo 0 > .config/waybar/update; notify-send 'The system has been updated'; pkill -SIGRTMIN+8 waybar"
         },
         "custom/icon": {
             "format": "{}",
