@@ -7,15 +7,15 @@
 /* top-bar */
 .top-bar {
     border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.508);
+    background-color: rgb(0, 0, 0);
     background: #20242a;
     background: linear-gradient(
             270deg,
-            rgba(0, 0, 0, 0.782),
-            rgba(17, 38, 42, 0.888),
-            rgb(9, 34, 54),
-            rgb(27, 19, 54),
-            rgba(18, 26, 18, 0.935)
+            rgb(0, 0, 0),
+            rgb(10, 22, 24),
+            rgb(2, 8, 12),
+            rgb(12, 8, 23),
+            rgb(11, 16, 11)
         )
         center / cover;
     background-size: 800% 800%;
@@ -34,7 +34,7 @@
 #battery {
     margin-left: 8px;
     margin-right: 8px;
-    background-color: #566277;
+    background-color: #222e45;
     padding: 0 12px 0 12px;
 }
 .top-bar #tray {
@@ -76,9 +76,9 @@
 #custom-icon,
 .memory #memory,
 #custom-icon {
-    color: rgba(255, 255, 255, 0.656);
-    background-color: rgba(57, 65, 73, 0.851);
-    border-color: rgb(145, 145, 145);
+    color: rgb(198, 198, 198);
+    background-color: rgb(15, 17, 18);
+    border-color: rgb(47, 47, 47);
     border-style: solid;
 }
 /* 图标左半边 */
@@ -164,16 +164,16 @@
 .time #clock.h,
 #clock.m {
     padding: 0 20px 0 20px;
-    background-color: rgba(0, 0, 0, 0.42);
+    color: #ebebeb;
+    text-shadow: black 5px 3px 12px;
+    background-color: rgba(156, 26, 26, 0);
 }
 .time #clock.h {
     font-size: 120px;
-    border-radius: 20px 20px 0 0;
 }
 .time #clock.m {
     font-size: 120px;
-    border-radius: 0 0 20px 20px;
-    padding-bottom: 12px;
+    margin-top: -30px;
 }
 /* mpd-bar */
 .mpd-info,
@@ -184,7 +184,8 @@
 .mpd-control #custom-prev,
 #custom-status,
 #custom-next {
-    background-color: #4ea643;
+    color: #dcdcdc;
+    background-color: #272727;
 }
 .mpd-info #mpd {
     border-radius: 20px 20px 0 0;
@@ -213,7 +214,7 @@
 
 .bottom-bar #taskbar {
     padding: 6px 20px 6px 20px;
-    background-color: #2f2f2f;
+    background-color: #1a1a1a;
     border-radius: 20px;
 }
 .bottom-bar #taskbar button {
@@ -221,5 +222,5 @@
     margin: 4px 2px 4px 2px;
 }
 .bottom-bar #taskbar button.active {
-    background-color: #696969;
+    background-color: #303030;
 }

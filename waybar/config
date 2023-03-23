@@ -139,7 +139,7 @@
             "format": "{used:0.2f}G / {total:0.1f}G"
         },
         "custom/icon": {
-            "format": "󰍛",
+            "format": "󰘚",
             "tooltip": false
         }
     },
@@ -160,7 +160,7 @@
             "format": "{avg_frequency}GHz | {usage}%"
         },
         "custom/icon": {
-            "format": "󰘚",
+            "format": "󰍛",
             "tooltip": false
         }
     },
